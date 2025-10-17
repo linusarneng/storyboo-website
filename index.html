@@ -14,20 +14,20 @@
     
     <style>
         :root {
-            --primary-purple: #4A1B5C;
-            --secondary-purple: #6B2C91;    
-            --accent-purple: #8B3FC7;
-            --light-purple: #B985E3;
-            --background-dark: #1A0B20;
-            --background-card: #2D1B3D;
+            --primary-purple: #5A2670; /* Slightly lighter primary */
+            --secondary-purple: #7A39A5;    
+            --accent-purple: #9A51D4;
+            --light-purple: #C69AF0;
+            --background-dark: #241030; /* Lightened from #1A0B20 */
+            --background-card: #341B46; /* Lightened card bg */
             --text-white: #FFFFFF;
             --text-light: #E0D5E8;
             --text-muted: #B8A5C7;
-            --gradient-primary: linear-gradient(135deg, #4A1B5C 0%, #8B3FC7 100%);
-            --gradient-secondary: linear-gradient(135deg, #6B2C91 0%, #B985E3 100%);
+            --gradient-primary: linear-gradient(135deg, #5A2670 0%, #9A51D4 100%);
+            --gradient-secondary: linear-gradient(135deg, #7A39A5 0%, #C69AF0 100%);
             --border-radius: 12px;
-            --shadow: 0 10px 30px rgba(75, 27, 92, 0.3);
-            --shadow-hover: 0 15px 40px rgba(75, 27, 92, 0.4);
+            --shadow: 0 10px 30px rgba(90, 38, 112, 0.25);
+            --shadow-hover: 0 15px 40px rgba(90, 38, 112, 0.35);
         }
 
         * {
@@ -49,7 +49,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(26, 11, 32, 0.95);
+            background: rgba(36, 16, 48, 0.85); /* Adjusted to match lighter bg */
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             z-index: 1000;
@@ -73,6 +73,27 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-badge img {
+            height: 42px;
+            width: 42px;
+            display: block;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .brand-badge:hover img {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.4);
         }
 
         .nav-links {
@@ -495,7 +516,12 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">StoryBoo</a>
+            <div class="brand">
+                <a href="#" class="logo">StoryBoo</a>
+                <a href="#" class="brand-badge" aria-label="StoryBoo home">
+                    <img src="Assets/appstore.png" alt="StoryBoo badge">
+                </a>
+            </div>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#how-it-works">How it Works</a></li>
@@ -676,9 +702,9 @@
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(26, 11, 32, 0.98)';
+                navbar.style.background = 'rgba(36, 16, 48, 0.92)';
             } else {
-                navbar.style.background = 'rgba(26, 11, 32, 0.95)';
+                navbar.style.background = 'rgba(36, 16, 48, 0.85)';
             }
         });
 
