@@ -532,6 +532,11 @@ body {
         font-size: 2.5rem;
     }
 
+    /* Hide hero description text above store buttons on mobile */
+    .hero-content > p {
+        display: none;
+    }
+
     .hero-buttons {
         justify-content: center;
         flex-direction: row;
@@ -557,8 +562,23 @@ body {
         grid-template-columns: 1fr;
     }
 
+    /* Hide descriptive text inside feature cards on mobile for a cleaner, compact layout */
+    .feature-card p {
+        display: none;
+    }
+
+    /* Hide selected feature cards entirely on mobile */
+    .feature-card.hide-mobile {
+        display: none;
+    }
+
     .steps {
         grid-template-columns: 1fr;
+    }
+
+    /* Hide step description text in How it Works on mobile for compact view */
+    .steps .step p {
+        display: none;
     }
 
     /* Prevent hero illustration overlapping content */
@@ -590,6 +610,9 @@ body {
         font-size: 1rem;
     }
 
+    /* Ensure hero description stays hidden on very small screens */
+    .hero-content > p { display: none; }
+
     .cta-button, .btn-secondary {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
@@ -599,4 +622,7 @@ body {
         width: clamp(160px, 70vw, 260px);
         height: clamp(160px, 70vw, 260px);
     }
+
+    /* (Optional redundancy) ensure hidden text also on very small screens */
+    .feature-card p { display: none; }
 }
