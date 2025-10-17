@@ -225,12 +225,13 @@ body {
      top: 50%;
      left: 50%;
      transform: translate(-50%, -50%);
-     width: 420px;
-     height: 420px;
+     width: 460px;
+     height: 460px;
      background: url('Assets/wave_boo.png') center / contain no-repeat;
-     opacity: 0.35;
+     opacity: 1;
      animation: floatImage 14s ease-in-out infinite;
-     filter: drop-shadow(0 10px 25px rgba(0,0,0,0.35));
+     /* Remove box / glow to leave only the clean image */
+     filter: none;
  }
 
  @keyframes floatImage {
