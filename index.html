@@ -7,7 +7,8 @@
     <meta name="description" content="Create unique AI-powered stories where your child is the main character. Interactive tales where you decide together how the story unfolds.">
     
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+    <link rel="icon" type="image/png" sizes="32x32" href="Assets/appstore.png">
+    <link rel="apple-touch-icon" href="Assets/appstore.png">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
@@ -25,6 +26,9 @@
                 </a>
                 <a href="#" class="logo">StoryBoo</a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#how-it-works">How it Works</a></li>
@@ -44,7 +48,7 @@
                     <a href="#" class="store-button" aria-label="Download from App Store">
                         <img src="Assets/app_store.png" alt="Download on the App Store">
                     </a>
-                    <a href="#" class="store-button" aria-label="Get it on Google Play">
+                    <a href="#" class="store-button play-store" aria-label="Get it on Google Play">
                         <img src="Assets/play_store.png" alt="Get it on Google Play">
                     </a>
                 </div>
@@ -186,6 +190,16 @@
     </footer>
 
     <script>
+        // Mobile nav toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', String(!expanded));
+                navLinks.classList.toggle('open');
+            });
+        }
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {

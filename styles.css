@@ -5,6 +5,7 @@
     --light-purple: #C69AF0;
     --background-dark: #241030; /* Lightened from #1A0B20 */
     --background-card: #341B46; /* Lightened card bg */
+    --footer-dark: #1b0c23; /* Dark gray footer background */
     --text-white: #FFFFFF;
     --text-light: #E0D5E8;
     --text-muted: #B8A5C7;
@@ -25,7 +26,8 @@ body {
     font-family: 'Poppins', sans-serif;
     background: var(--background-dark);
     color: var(--text-white);
-    line-height: 1.6;
+    line-height: 1.55;
+    font-size: clamp(0.95rem, 0.4vw + 0.8rem, 1.05rem);
     overflow-x: hidden;
 }
 
@@ -85,6 +87,46 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+}
+
+/* Mobile nav toggle button */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 6px 10px;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+.nav-toggle:hover {
+    background: rgba(255,255,255,0.12);
+}
+.nav-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: var(--text-light);
+    border-radius: 2px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.nav-links.open {
+    display: flex;
 }
 
 .nav-links a {
@@ -149,20 +191,21 @@ body {
 
 .hero-content h1 {
     font-family: 'Fredoka One', cursive;
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(2.1rem, 4vw + 1rem, 3.6rem);
+    margin-bottom: clamp(1rem, 1.5vw, 1.6rem);
     background: var(--gradient-secondary);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    line-height: 1.2;
+    line-height: 1.14;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 0.7vw + 0.8rem, 1.25rem);
     color: var(--text-light);
-    margin-bottom: 2rem;
-    line-height: 1.7;
+    margin-bottom: clamp(1.2rem, 2vw, 2rem);
+    line-height: 1.65;
+    max-width: 52ch;
 }
 
 .hero-buttons {
@@ -184,17 +227,19 @@ body {
 }
 
 .store-button img {
-    height: 80px;
-    width: 200px;
-    border-radius: 8px;
+    height: clamp(54px, 8vw, 78px);
+    width: auto;
+    max-width: clamp(150px, 32vw, 240px);
+    aspect-ratio: 3.4 / 1;
+    border-radius: 10px;
     display: block;
     object-fit: contain;
 }
 
-/* Make Play Store button slightly bigger to match App Store */
-.store-button:last-child img {
-    height: 105px;
-    width: 250px;
+/* Make Play Store button a little bigger */
+.play-store img {
+    height: clamp(60px, 8.5vw, 86px);
+    max-width: clamp(165px, 34vw, 260px);
 }
 
 .btn-secondary {
@@ -225,19 +270,27 @@ body {
      top: 50%;
      left: 50%;
      transform: translate(-50%, -50%);
-     width: 460px;
-     height: 460px;
+     width: clamp(220px, 40vw, 520px);
+     height: clamp(220px, 40vw, 520px);
+     max-width: 90%;
      background: url('Assets/wave_boo.png') center / contain no-repeat;
      opacity: 1;
-     animation: floatImage 14s ease-in-out infinite;
-     /* Remove box / glow to leave only the clean image */
+     animation: floatImage 9s ease-in-out infinite;
      filter: none;
+     pointer-events: none;
  }
 
  @keyframes floatImage {
      0%, 100% { transform: translate(-50%, -50%) scale(1); }
      50% { transform: translate(-50%, -52%) scale(1.05); }
  }
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-image::before {
+        animation: none;
+        transform: translate(-50%, -50%); /* neutral */
+    }
+}
 
 @keyframes sparkle {
     0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
@@ -246,7 +299,7 @@ body {
 
 /* Features Section */
 .features {
-    padding: 5rem 0;
+    padding: clamp(3.2rem, 6vw, 5rem) 0;
     background: var(--background-dark);
 }
 
@@ -259,8 +312,8 @@ body {
 .section-title {
     text-align: center;
     font-family: 'Fredoka One', cursive;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+    font-size: clamp(1.9rem, 2.4vw + 1rem, 2.7rem);
+    margin-bottom: clamp(2rem, 3vw, 3.2rem);
     background: var(--gradient-secondary);
     -webkit-background-clip: text;
     background-clip: text;
@@ -306,7 +359,7 @@ body {
 
 /* How it Works */
 .how-it-works {
-    padding: 5rem 0;
+    padding: clamp(3.2rem, 6vw, 5rem) 0;
     background: var(--background-dark);
 }
 
@@ -342,7 +395,7 @@ body {
 
 /* Testimonials */
 .testimonials {
-    padding: 5rem 0;
+    padding: clamp(3.2rem, 6vw, 5rem) 0;
     background: var(--background-dark);
 }
 
@@ -373,9 +426,11 @@ body {
 
 /* CTA Section */
 .cta-section {
-    padding: 5rem 0;
+    padding: clamp(3.2rem, 6vw, 5rem) 0;
     text-align: center;
-    background: var(--gradient-primary);
+    background: var(--background-dark);
+    border-top: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 
 .cta-section h2 {
@@ -391,15 +446,20 @@ body {
 }
 
 .cta-section .cta-button {
-    background: white;
-    color: var(--primary-purple);
-    font-size: 1.1rem;
-    padding: 1rem 2rem;
+    background: var(--gradient-primary);
+    color: #fff;
+    font-size: 1.05rem;
+    padding: 0.9rem 2rem;
+    box-shadow: var(--shadow);
+}
+.cta-section .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
 }
 
 /* Footer */
 .footer {
-    background: var(--background-card);
+    background: var(--footer-dark);
     padding: 3rem 0;
     text-align: center;
 }
@@ -436,15 +496,37 @@ body {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    .nav-toggle { display: flex; }
     .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        background: rgba(36,16,48,0.95);
+        backdrop-filter: blur(10px);
+        padding: 1.25rem 1.5rem;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        flex-direction: column;
+        gap: 1.25rem;
+        min-width: 220px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         display: none;
+        animation: scaleFade 0.35s ease;
+    }
+    @keyframes scaleFade {
+        0% { opacity: 0; transform: translateY(-8px) scale(.96); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
     }
 
     .hero-container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         text-align: center;
-        gap: 2rem;
+        gap: 1.75rem;
     }
+    .hero-image { order: 1; }
+    .hero-content { order: 2; }
+    .hero-buttons { order: 3; justify-content: center; }
 
     .hero-content h1 {
         font-size: 2.5rem;
@@ -462,9 +544,9 @@ body {
     }
 
     /* Make Play Store button slightly bigger on mobile too */
-    .store-button:last-child img {
-        height: 65px;
-        width: 160px;
+    .play-store img {
+        height: 68px;
+        width: 172px;
     }
 
     .section-title {
@@ -477,6 +559,17 @@ body {
 
     .steps {
         grid-template-columns: 1fr;
+    }
+
+    /* Prevent hero illustration overlapping content */
+    .hero-image::before {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+        display: block;
+        width: clamp(180px, 60vw, 320px);
+        height: clamp(180px, 60vw, 320px);
+        animation: none; /* Less distraction on small screens */
     }
 }
 
@@ -500,5 +593,10 @@ body {
     .cta-button, .btn-secondary {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
+    }
+
+    .hero-image::before {
+        width: clamp(160px, 70vw, 260px);
+        height: clamp(160px, 70vw, 260px);
     }
 }
