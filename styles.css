@@ -238,7 +238,7 @@ body {
 
 /* Make Play Store button a little bigger */
 .play-store img {
-    height: clamp(60px, 8.5vw, 86px);
+    height: clamp(100px, 8.5vw, 96px);
     max-width: clamp(165px, 34vw, 260px);
 }
 
