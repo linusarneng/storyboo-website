@@ -165,6 +165,8 @@ body {
     position: relative;
     overflow: hidden;
     padding-top: 100px;
+    /* Extra bottenpadding för mer luft innan nästa sektion */
+    padding-bottom: clamp(3rem, 8vh, 6rem);
 }
 
 .hero::before {
@@ -214,11 +216,15 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
+    /* Extra avstånd under knapparna */
+    margin-bottom: clamp(2.5rem, 6vw, 4rem);
 }
 
 .store-button {
     display: inline-block;
     transition: transform 0.3s ease, filter 0.3s ease;
+    /* Ta bort extra vertikal line-box space */
+    line-height: 0;
 }
 
 .store-button:hover {
@@ -227,10 +233,8 @@ body {
 }
 
 .store-button img {
-    height: clamp(54px, 8vw, 78px);
-    width: auto;
-    max-width: clamp(150px, 32vw, 240px);
-    aspect-ratio: 3.4 / 1;
+    width: clamp(150px, 32vw, 240px);
+    height: auto; /* Låt naturliga proportioner styra höjden */
     border-radius: 10px;
     display: block;
     object-fit: contain;
@@ -238,8 +242,8 @@ body {
 
 /* Make Play Store button a little bigger */
 .play-store img {
-    height: clamp(100px, 8.5vw, 96px);
-    max-width: clamp(165px, 34vw, 260px);
+    width: clamp(165px, 34vw, 260px);
+    height: auto;
 }
 
 .btn-secondary {
@@ -439,6 +443,15 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Gradient text utility */
+.gradient-text {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
 .cta-section p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
@@ -455,6 +468,37 @@ body {
 .cta-section .cta-button:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
+}
+
+/* CTA store buttons layout */
+.cta-store-buttons {
+    display: flex;
+    gap: clamp(1rem, 3vw, 2rem);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.cta-store-buttons .store-button img {
+    width: clamp(170px, 26vw, 230px);
+    height: auto;
+}
+
+.cta-store-buttons .play-store img {
+    width: clamp(185px, 28vw, 245px);
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .cta-store-buttons .store-button img { width: clamp(160px, 44vw, 210px); }
+    .cta-store-buttons .play-store img { width: clamp(172px, 46vw, 220px); }
+}
+
+@media (max-width: 480px) {
+    .cta-store-buttons { gap: 0.75rem; }
+    .cta-store-buttons .store-button img { width: clamp(150px, 60vw, 200px); }
+    .cta-store-buttons .play-store img { width: clamp(160px, 63vw, 210px); }
 }
 
 /* Footer */
@@ -541,17 +585,21 @@ body {
         justify-content: center;
         flex-direction: row;
         gap: 1rem;
+        margin-bottom: clamp(3rem, 12vw, 5rem); /* Mer spacing på mobil */
     }
 
+    /* Bigger store badges on mobile */
     .store-button img {
-        height: 60px;
-        width: 150px;
+        /* Mindre på mobil för bättre balans */
+        width: clamp(180px, 55vw, 250px);
+        height: auto;
     }
 
-    /* Make Play Store button slightly bigger on mobile too */
+    /* Play Store a touch larger for visual balance */
     .play-store img {
-        height: 68px;
-        width: 172px;
+        /* Endast något bredare än App Store */
+        width: clamp(195px, 58vw, 265px);
+        height: auto;
     }
 
     .section-title {
@@ -613,6 +661,16 @@ body {
     /* Ensure hero description stays hidden on very small screens */
     .hero-content > p { display: none; }
 
+    /* Slight additional upscale on very small screens to keep buttons prominent */
+    .store-button img {
+        width: clamp(190px, 65vw, 240px);
+        height: auto;
+    }
+    .play-store img {
+        width: clamp(205px, 68vw, 255px);
+        height: auto;
+    }
+
     .cta-button, .btn-secondary {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
@@ -621,6 +679,10 @@ body {
     .hero-image::before {
         width: clamp(160px, 70vw, 260px);
         height: clamp(160px, 70vw, 260px);
+    }
+
+    .hero-buttons {
+        margin-bottom: clamp(3.5rem, 14vw, 6rem); /* Extra spacing på mycket små skärmar */
     }
 
     /* (Optional redundancy) ensure hidden text also on very small screens */
