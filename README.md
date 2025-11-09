@@ -2,7 +2,7 @@
 
 Welcome to the official landing page repository for **StoryBoo** – your mobile app for interactive storytelling and creative adventures!
 
-![StoryBoo Logo](assets/images/logo.png) <!-- Replace with actual logo path or URL -->
+![StoryBoo Logo](http://www.storybooapp.com/Assets/appstore.png) <!-- Replace with actual logo path or URL -->
 
 ## 🌟 About StoryBoo
 
