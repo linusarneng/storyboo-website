@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StoryBoo - AI-generated children's books where your child is the hero</title>
-    <meta name="description" content="Create unique AI-powered stories where your child is the main character. Interactive tales where you decide together how the story unfolds.">
-    
+    <title>StoryBoo - Magical AI Stories for Kids</title>
+    <meta name="description"
+        content="Create unique AI-powered stories where your child is the main character. Interactive tales where you decide together how the story unfolds.">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="Assets/appstore.png">
     <link rel="apple-touch-icon" href="Assets/appstore.png">
-    
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap"
+        rel="stylesheet">
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="brand">
-                <a href="#" class="brand-badge" aria-label="StoryBoo home">
-                    <img src="Assets/appstore.png" alt="StoryBoo badge">
-                </a>
-                <a href="#" class="logo">StoryBoo</a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <a href="#" class="brand">
+                <img src="Assets/appstore.png" alt="StoryBoo Logo" class="brand-logo">
+                <span class="brand-text">StoryBoo</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#how-it-works">How it Works</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#how-it-works" class="nav-link">How it Works</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -42,194 +45,216 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Magical stories where your child is the hero</h1>
-                <p>Create unique, AI-generated children's books where your child plays the leading role. Together you decide how the adventure unfolds in each interactive story.</p>
+                <h1 class="hero-title">Magical stories where <span class="gradient-text">your child</span> is the hero
+                </h1>
+                <p class="hero-description">Create unique, AI-generated children's books where your child plays the
+                    leading role. Together you decide how the adventure unfolds in each interactive story.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="store-button" aria-label="Download from App Store">
+                    <a href="#" class="store-btn" aria-label="Download from App Store">
                         <img src="Assets/app_store.png" alt="Download on the App Store">
                     </a>
-                    <a href="#" class="store-button play-store" aria-label="Get it on Google Play">
+                    <a href="#" class="store-btn" aria-label="Get it on Google Play">
                         <img src="Assets/play_store.png" alt="Get it on Google Play">
                     </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <!-- Animated icons will be displayed here via CSS -->
+            <div class="hero-visual">
+                <div class="floating-element float-1"></div>
+                <div class="floating-element float-2"></div>
+                <img src="Assets/wave_boo.png" alt="StoryBoo Character" class="hero-floating-image">
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
     <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title">Why children love StoryBoo</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">🎭</span>
-                    <h3>Your child as the main character</h3>
-                    <p>Add your child's name, appearance and interests to create completely personalized stories where they are the star.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🌟</span>
-                    <h3>AI-generated adventures</h3>
-                    <p>Our advanced AI creates unique stories based on your choices. No two stories are ever the same!</p>
-                </div>
-                <div class="feature-card hide-mobile">
-                    <span class="feature-icon">🗺️</span>
-                    <h3>Interactive choices</h3>
-                    <p>Choose together how the story should develop. Will you go to the castle or explore the mysterious forest?</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">💾</span>
-                    <h3>Save your characters</h3>
-                    <p>Store character profiles and bring them back in new adventures—watch them grow across stories.</p>
-                </div>
-                <div class="feature-card hide-mobile">
-                    <span class="feature-icon">🎨</span>
-                    <h3>Beautiful illustrations</h3>
-                    <p>Each story comes with AI-generated images that match the adventure and show your child in the action.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🔊</span>
-                    <h3>Listen to your stories</h3>
-                    <p>Enjoy narrated versions with warm, engaging voices—perfect for bedtime, car rides, or quiet moments.</p>
-                </div>
+        <div class="section-header">
+            <h2 class="section-title">Why children love <span class="gradient-text">StoryBoo</span></h2>
+            <p style="font-size: 1.1rem; opacity: 0.7;">Experience the magic of personalized storytelling</p>
+        </div>
+        <div class="features-grid">
+            <div class="glass-card tilt-card">
+                <span class="feature-icon">🎭</span>
+                <h3 class="feature-title">You are the Hero</h3>
+                <p class="feature-desc">Add your child's name, appearance and interests to create completely
+                    personalized stories where they are the star.</p>
+            </div>
+            <div class="glass-card tilt-card">
+                <span class="feature-icon">✨</span>
+                <h3 class="feature-title">AI Magic</h3>
+                <p class="feature-desc">Our advanced AI creates unique stories based on your choices. No two stories are
+                    ever the same!</p>
+            </div>
+            <div class="glass-card tilt-card">
+                <span class="feature-icon">🗺️</span>
+                <h3 class="feature-title">Interactive Choices</h3>
+                <p class="feature-desc">Choose together how the story should develop. Will you go to the castle or
+                    explore the mysterious forest?</p>
+            </div>
+            <div class="glass-card tilt-card">
+                <span class="feature-icon">💾</span>
+                <h3 class="feature-title">Save Characters</h3>
+                <p class="feature-desc">Store character profiles and bring them back in new adventures—watch them grow
+                    across stories.</p>
+            </div>
+            <div class="glass-card tilt-card">
+                <span class="feature-icon">🎨</span>
+                <h3 class="feature-title">Beautiful Art</h3>
+                <p class="feature-desc">Each story comes with AI-generated images that match the adventure and show your
+                    child in the action.</p>
+            </div>
+            <div class="glass-card tilt-card">
+                <span class="feature-icon">🎧</span>
+                <h3 class="feature-title">Audio Stories</h3>
+                <p class="feature-desc">Enjoy narrated versions with warm, engaging voices—perfect for bedtime, car
+                    rides, or quiet moments.</p>
             </div>
         </div>
     </section>
 
     <!-- How it Works -->
     <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <h2 class="section-title">How to create your story</h2>
-            <div class="steps">
-                <div class="step">
+        <div class="section-header">
+            <h2 class="section-title">Create a story in <span class="gradient-text">3 steps</span></h2>
+        </div>
+        <div class="steps-container">
+            <!-- Step 1 -->
+            <div class="step-wrapper">
+                <div class="phone-card">
+                    <div class="phone-screen">
+                        <img src="Assets/step1.png" alt="Describe Story" class="app-screenshot">
+                    </div>
+                </div>
+                <div class="step-info">
                     <div class="step-number">1</div>
-                    <h3>Describe your story</h3>
-                    <p>Write a short prompt or choose a theme to set the tone of the adventure.</p>
+                    <h3>Describe</h3>
+                    <p>Choose a theme or write a prompt.</p>
                 </div>
-                <div class="step">
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-wrapper">
+                <div class="phone-card">
+                    <div class="phone-screen">
+                        <img src="Assets/step2.png" alt="Add Hero" class="app-screenshot">
+                    </div>
+                </div>
+                <div class="step-info">
                     <div class="step-number">2</div>
-                    <h3>Add characters</h3>
-                    <p>Include your child and any friends, pets or heroes that should appear.</p>
+                    <h3>Customize</h3>
+                    <p>Add your child as the main character.</p>
                 </div>
-                <div class="step">
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-wrapper">
+                <div class="phone-card">
+                    <div class="phone-screen">
+                        <img src="Assets/step3.png" alt="Magic Result" class="app-screenshot">
+                    </div>
+                </div>
+                <div class="step-info">
                     <div class="step-number">3</div>
-                    <h3>Let AI create</h3>
-                    <p>Our AI turns your inputs into a unique, illustrated children’s story.</p>
+                    <h3>Read & Play</h3>
+                    <p>Enjoy your unique interactive story.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2 class="section-title">What parents say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <p class="testimonial-text">"Liam was so happy when he saw himself as a knight in the story! Now he wants to create new adventures every night."</p>
-                    <p class="testimonial-author">- Anna, mother of Liam (5 years)</p>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"Amazing app that really captures children's imagination. The quality of the stories is impressive and the images are so beautiful."</p>
-                    <p class="testimonial-author">- Erik, father of Maja (4 years)</p>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"Finally an app that both entertains and inspires reading. My twins love deciding how their adventures should end!"</p>
-                    <p class="testimonial-author">- Sofia, mother of Ella & Emil (6 years)</p>
-                </div>
-            </div>
+    <section id="testimonials" class="features" style="padding-top: 0;">
+        <div class="section-header">
+            <h2 class="section-title">Loved by <span class="gradient-text">Parents</span></h2>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="download" class="cta-section">
-        <div class="container">
-            <h2>Create your first <span class="gradient-text">story</span> for free</h2>
-            <p>Jump in and turn an idea into a personalized, illustrated children’s story in minutes.</p>
-            <div class="cta-store-buttons">
-                <a href="#" class="store-button" aria-label="Download from App Store">
-                    <img src="Assets/app_store.png" alt="Download on the App Store" loading="lazy" decoding="async">
-                </a>
-                <a href="#" class="store-button play-store" aria-label="Get it on Google Play">
-                    <img src="Assets/play_store.png" alt="Get it on Google Play" loading="lazy" decoding="async">
-                </a>
+        <div class="features-grid">
+            <div class="glass-card">
+                <p style="font-style: italic; margin-bottom: 1rem;">"Liam was so happy when he saw himself as a knight
+                    in the story! Now he wants to create new adventures every night."</p>
+                <h4 class="gradient-text">- Anna & Liam (5)</h4>
+            </div>
+            <div class="glass-card">
+                <p style="font-style: italic; margin-bottom: 1rem;">"Amazing app that really captures children's
+                    imagination. The quality of the stories is impressive and the images are so beautiful."</p>
+                <h4 class="gradient-text">- Erik & Maja (4)</h4>
+            </div>
+            <div class="glass-card">
+                <p style="font-style: italic; margin-bottom: 1rem;">"Finally an app that both entertains and inspires
+                    reading. My twins love deciding how their adventures should end!"</p>
+                <h4 class="gradient-text">- Sofia, Ella & Emil (6)</h4>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>StoryBoo</h3>
-                    <p>Magical stories for all children</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Links</h3>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>StoryBoo</h3>
+                <p style="opacity: 0.6;">Magical stories for all children.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Links</h3>
+                <div class="footer-links">
                     <a href="#features">Features</a>
                     <a href="#how-it-works">How it Works</a>
                     <a href="#testimonials">Reviews</a>
                 </div>
-                <div class="footer-section">
-                    <h3>Support</h3>
+            </div>
+            <div class="footer-col">
+                <h3>Support</h3>
+                <div class="footer-links">
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Service</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 StoryBoo. All rights reserved.</p>
-            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 StoryBoo. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile nav toggle
+        // 3D Tilt Effect for Cards
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = ((y - centerY) / centerY) * -10;
+                const rotateY = ((x - centerX) / centerX) * 10;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
+        });
+
+        // Mobile Nav
         const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
         if (navToggle) {
             navToggle.addEventListener('click', () => {
-                const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-                navToggle.setAttribute('aria-expanded', String(!expanded));
-                navLinks.classList.toggle('open');
-            });
-        }
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                if (navLinks.style.display === 'flex') {
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '80px';
+                    navLinks.style.left = '0';
+                    navLinks.style.width = '100%';
+                    navLinks.style.background = 'var(--bg-dark)';
+                    navLinks.style.padding = '2rem';
+                    navLinks.style.borderBottom = 'var(--glass-border)';
                 }
             });
-        });
-
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(36, 16, 48, 0.92)';
-            } else {
-                navbar.style.background = 'rgba(36, 16, 48, 0.85)';
-            }
-        });
-
-        // Feature cards hover effect enhancement
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
+        }
     </script>
 </body>
+
 </html>
