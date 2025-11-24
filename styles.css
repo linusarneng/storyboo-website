@@ -370,9 +370,9 @@ h6 {
 .phone-card:hover {
     transform: translateY(-15px) scale(1.02);
     box-shadow:
-        0 0 0 2px var(--glow-primary),
-        0 30px 60px rgba(255, 46, 147, 0.2);
-    border-color: #3a3a3a;
+        0 0 0 2px var(--glow-secondary),
+        0 30px 60px rgba(110, 58, 255, 0.2);
+    border-color: #2a2a2a;
 }
 
 .phone-screen {
