@@ -194,7 +194,7 @@ h6 {
 }
 
 .store-btn img {
-    height: 50px;
+    height: 80px;
     border-radius: 8px;
 }
 
@@ -314,11 +314,8 @@ h6 {
 .feature-icon {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    background: var(--secondary-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
+    color: inherit;
+    /* use default emoji color */
 }
 
 .feature-title {
