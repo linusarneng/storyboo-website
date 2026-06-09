@@ -726,3 +726,42 @@ h6 {
         display: none;
     }
 }
+
+/* Legal pages mobile improvements */
+@media (max-width: 768px) {
+    .legal-page {
+        padding: 1rem;
+    }
+    
+    .legal-container {
+        margin: 3rem 0.5rem;
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+    
+    .legal-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .legal-intro {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .legal-container h2 {
+        font-size: 1.2rem;
+    }
+    
+    .legal-container p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .back-link {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
