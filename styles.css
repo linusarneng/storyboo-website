@@ -618,14 +618,63 @@ h6 {
     .hero-visual {
         height: 320px;
         margin-bottom: 1.5rem;
+        overflow: hidden;
     }
     
     .hero-floating-image {
-        max-width: 260px;
-        width: 85%;
+        max-width: 240px;
+        width: 80%;
     }
     
     .float-1, .float-2 {
         display: none;
+    }
+
+    /* Fix horizontal overflow on mobile */
+    .nav-container,
+    .hero-container,
+    .features-grid,
+    .steps-container,
+    .footer-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .testimonial-card {
+        width: 260px;
+    }
+
+    .phone-card {
+        width: 240px;
+        height: 480px;
+    }
+
+    .marquee-container {
+        overflow: hidden;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .testimonial-card {
+        width: 220px;
+    }
+
+    .phone-card {
+        width: 200px;
+        height: 400px;
+    }
+
+    .section-title {
+        font-size: 2rem;
     }
 }
