@@ -581,37 +581,6 @@ h6 {
     font-family: var(--font-body);
     font-weight: 600;
 }
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero-visual {
-        order: -1;
-        height: 420px;
-        margin-top: 0;
-        margin-bottom: 2rem;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .nav-links {
-        display: none;
-        /* Add mobile menu later if needed */
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-}
 
 /* Better mobile hero */
 @media (max-width: 768px) {
@@ -676,5 +645,50 @@ h6 {
 
     .section-title {
         font-size: 2rem;
+    }
+}
+/* Mobile Responsiveness - Consolidated */
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding-bottom: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .hero-visual {
+        order: -1;
+        height: 260px;
+        margin: 0 auto 1rem;
+        max-width: 280px;
+    }
+    
+    .hero-floating-image {
+        max-width: 220px !important;
+        width: 80% !important;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+    
+    .nav-links {
+        display: none;
     }
 }
