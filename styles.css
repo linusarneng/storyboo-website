@@ -692,3 +692,11 @@ h6 {
         display: none;
     }
 }
+
+/* Additional mobile centering */
+@media (max-width: 768px) {
+    .features, .how-it-works, .footer { padding-left: 1rem; padding-right: 1rem; }
+    .features-grid, .steps-container, .footer-content { padding: 0 0.5rem; }
+    .section-header { padding: 0 1rem; }
+    .marquee-container { padding: 1rem 0; }
+}
