@@ -720,3 +720,9 @@ h6 {
         height: 300px;
     }
 }
+
+@media (max-width: 768px) {
+    .hero-description {
+        display: none;
+    }
+}
