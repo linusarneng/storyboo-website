@@ -612,3 +612,20 @@ h6 {
         display: block;
     }
 }
+
+/* Better mobile hero */
+@media (max-width: 768px) {
+    .hero-visual {
+        height: 320px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-floating-image {
+        max-width: 260px;
+        width: 85%;
+    }
+    
+    .float-1, .float-2 {
+        display: none;
+    }
+}
