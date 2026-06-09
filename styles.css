@@ -765,3 +765,10 @@ h6 {
         font-size: 0.9rem;
     }
 }
+
+/* Force hide hero description on mobile */
+@media (max-width: 768px) {
+    .hero-description {
+        display: none !important;
+    }
+}
