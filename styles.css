@@ -700,3 +700,23 @@ h6 {
     .section-header { padding: 0 1rem; }
     .marquee-container { padding: 1rem 0; }
 }
+
+/* Larger mascot image */
+.hero-floating-image {
+    max-width: 620px;
+    width: 100
+/* Larger mascot image */
+.hero-floating-image {
+    max-width: 620px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .hero-floating-image {
+        max-width: 280px;
+    }
+    
+    .hero-visual {
+        height: 300px;
+    }
+}
