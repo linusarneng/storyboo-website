@@ -12,39 +12,207 @@
   <a href="index.html" class="back-link" aria-label="Back to home">&#8592; Back</a>
   <main class="legal-container">
     <h1 class="legal-title">Privacy Policy</h1>
-    <p class="legal-intro">Your privacy matters. This policy explains what data we collect and how we use it.</p>
+    <p class="legal-intro">This Privacy Policy explains how StoryBoo (&ldquo;<strong>StoryBoo</strong>&rdquo;, &ldquo;<strong>we</strong>&rdquo;, &ldquo;<strong>us</strong>&rdquo;, &ldquo;<strong>our</strong>&rdquo;) collects, uses, shares, and protects personal data when you use the StoryBoo mobile application, the website at <a href="https://www.storybooapp.com">www.storybooapp.com</a>, and related services (together, the &ldquo;<strong>Service</strong>&rdquo;). It also explains your rights and how to exercise them. StoryBoo is the data controller for the personal data described in this policy; contact details are in Section 13. This policy is incorporated into our <a href="terms.html">Terms of Service</a>.</p>
+
+    <div class="legal-summary">
+      <p><strong>Summary (not a substitute for the full policy):</strong> We collect what we need to run StoryBoo &mdash; your account details, the stories and characters you create, your subscription status, and basic technical logs. Story prompts and character details are sent to our AI providers to generate text, images, and narration. We don't run ads, we don't use third-party analytics or tracking SDKs, and we never sell your data. Stories you publish to Explore are public. You can export your data and delete your account directly in the app. If you describe your child in a character, please use a first name only &mdash; that information is used solely to personalize your stories.</p>
+    </div>
 
     <section>
-      <h2>1. Information We Collect</h2>
-      <p>We may collect the name you provide for your child, story prompts, character descriptions and usage analytics to improve story quality.</p>
+      <h2>1. Who this Service is for, and children's data</h2>
+      <p>The StoryBoo <strong>account holder must be an adult</strong> (see our <a href="terms.html">Terms of Service</a>). Children may use the app only through an adult's account and under that adult's supervision. We do not knowingly collect personal data directly from children, and children cannot create accounts. If you believe a child has created an account, contact us and we will delete it.</p>
+      <p><strong>Information about children that you provide.</strong> When you create a character or a story, you may choose to include details about your child &mdash; for example a first name, age, gender, or a description of their appearance &mdash; so that stories can feature them. Please be aware that:</p>
+      <ul>
+        <li>you, the parent or guardian, decide what to share, and you can use made-up details instead;</li>
+        <li>we recommend using <strong>first names only</strong> and avoiding identifying details (no surnames, schools, addresses, or similar);</li>
+        <li>these details are used <strong>solely to generate your stories, images, and narration</strong> (which involves processing by our AI providers &mdash; see Section 5), and to show your characters and stories back to you in the app;</li>
+        <li>we never use them for advertising or marketing, and we never sell them;</li>
+        <li><strong>do not publish stories to Explore that identify a real child</strong> (see Section 4);</li>
+        <li>you can edit or delete characters and stories at any time, and deleting them removes the associated details as described in Section 8.</li>
+      </ul>
     </section>
 
     <section>
-      <h2>2. How We Use Data</h2>
-      <p>Data is used solely to personalize stories, improve AI generation and maintain a safe experience. We do not sell personal data.</p>
+      <h2>2. Data we collect</h2>
+
+      <h3>2.1 Data you provide</h3>
+      <ul>
+        <li><strong>Account data</strong> &mdash; email address, sign-in method (email/password, Google, or Apple), and a display name you choose. Passwords are handled by Firebase Authentication; we never see or store your password. If you sign in with Google or Apple, we receive basic profile data from them (such as your email and name/identifier) as permitted by your settings; Apple lets you hide your real email.</li>
+        <li><strong>Profile data</strong> &mdash; an optional in-app profile picture/avatar selection.</li>
+        <li><strong>Content you create</strong> &mdash; stories (title, description, genre, target age, page text), characters (name, gender, age, appearance description), generated images and audio associated with them, favorites, and likes.</li>
+        <li><strong>Onboarding survey (optional)</strong> &mdash; how you heard about StoryBoo and how often you read to your child. These answers are stored as <strong>aggregate counters only</strong> (e.g., &ldquo;+1 for social media&rdquo;) and are not kept in your user profile.</li>
+        <li><strong>Communications</strong> &mdash; feedback you submit in the app, story reports, appeals, ratings, and any emails you send us.</li>
+      </ul>
+
+      <h3>2.2 Data created when you use the Service</h3>
+      <ul>
+        <li><strong>Usage data</strong> &mdash; stories created and read, reading progress, language preference, and subscription plan status.</li>
+        <li><strong>Moderation data</strong> &mdash; if your content is reported, removed, or banned, or if you submit a report or appeal, we keep records of those events and decisions (see Section 8 for retention).</li>
+        <li><strong>Subscription data</strong> &mdash; your subscription status, product (monthly/yearly), trial eligibility, renewal and expiry information, and an anonymous RevenueCat app user identifier. <strong>We never receive or store your payment card details</strong> &mdash; payment is handled entirely by Apple or Google.</li>
+        <li><strong>Technical data</strong> &mdash; when your device communicates with our backend, standard technical information is processed and may appear in server logs: IP address, request timestamps, device/app attestation tokens (Firebase App Check, used to block abusive traffic), and error information. We do <strong>not</strong> use third-party analytics, advertising, or tracking SDKs, and we do not fingerprint your device.</li>
+      </ul>
+
+      <h3>2.3 Data stored only on your device</h3>
+      <p>Some data stays on your device and is not sent to us: cached stories, images, and audio for faster loading and offline reading; app preferences; and locally scheduled notifications (for example the optional free-trial reminder). You can clear this by clearing the app's storage or deleting the app.</p>
     </section>
 
     <section>
-      <h2>3. Data Storage & Security</h2>
-      <p>We apply industry-standard security practices. Character profiles and generated stories are stored securely and can be deleted on request.</p>
+      <h2>3. How we use your data, and the legal bases</h2>
+      <p>We use personal data to:</p>
+      <table class="legal-table">
+        <thead>
+          <tr><th>Purpose</th><th>Examples</th><th>Legal basis (GDPR)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Provide the Service</td>
+            <td>Creating your account; generating stories, images, translations, and narration from your inputs; syncing your library across sessions; operating Explore, favorites, and likes</td>
+            <td>Performance of a contract (Art. 6(1)(b))</td>
+          </tr>
+          <tr>
+            <td>Manage subscriptions</td>
+            <td>Activating Plus features, tracking credits, processing renewal events from the app stores</td>
+            <td>Performance of a contract (Art. 6(1)(b))</td>
+          </tr>
+          <tr>
+            <td>Keep the platform safe</td>
+            <td>Content moderation, processing reports and appeals, enforcing strikes and bans, App Check attestation, preventing fraud and abuse</td>
+            <td>Legitimate interests (Art. 6(1)(f)) &mdash; keeping a children's-content platform safe; legal obligation where applicable</td>
+          </tr>
+          <tr>
+            <td>Improve the Service</td>
+            <td>Aggregate, non-identifying statistics (e.g., total stories created, onboarding survey counters)</td>
+            <td>Legitimate interests (Art. 6(1)(f))</td>
+          </tr>
+          <tr>
+            <td>Communicate with you</td>
+            <td>Responding to feedback and support requests, in-app notices about your content (e.g., moderation decisions)</td>
+            <td>Performance of a contract; legitimate interests</td>
+          </tr>
+          <tr>
+            <td>Comply with the law</td>
+            <td>Responding to lawful requests, keeping required records, enforcing our Terms</td>
+            <td>Legal obligation (Art. 6(1)(c)); legitimate interests</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>We do <strong>not</strong> use your data for advertising, we do not sell or rent personal data, and we do not use your stories, characters, or other content to train AI models (see Section 5 regarding our AI providers).</p>
+      <p>Automated content-safety filters may flag content for review; meaningful decisions with significant effects (such as account termination) involve human review, and you can appeal moderation decisions in the app.</p>
     </section>
 
     <section>
-      <h2>4. Third-Party Services</h2>
-      <p>We may use analytics or cloud hosting providers; they process limited technical data to deliver the service.</p>
+      <h2>4. What other users can see</h2>
+      <ul>
+        <li><strong>Private by default.</strong> Your stories and characters are private unless you publish a story.</li>
+        <li><strong>If you publish a story to Explore</strong>, the story (text, images, title, description, genre) and the <strong>display name</strong> on it become visible to all StoryBoo users. Other users can like, favorite, report, and listen to narrations of it. You can unpublish or delete it at any time; cached copies (such as translations or narration generated while public) may take time to expire.</li>
+        <li><strong>Leaderboards and community features</strong> may display your display name and activity counts (such as likes received). Your email address is never shown to other users.</li>
+      </ul>
+      <p>Choose a display name that doesn't identify you or your child if you prefer to stay anonymous.</p>
     </section>
 
     <section>
-      <h2>5. Your Rights</h2>
-      <p>You can request deletion or export of stored story data. Contact us at support@storyboo.app.</p>
+      <h2>5. Who we share data with (processors and partners)</h2>
+      <p>We share personal data only with the service providers needed to run StoryBoo, under contracts that restrict their use of your data:</p>
+      <table class="legal-table">
+        <thead>
+          <tr><th>Provider</th><th>Role</th><th>What they process</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Google Firebase / Google Cloud</strong> (Google LLC)</td>
+            <td>Hosting, authentication, database, file storage, server functions</td>
+            <td>Account data, content, usage data, logs. Data is primarily stored in Google Cloud's <strong>United States</strong> region (us-central1).</td>
+          </tr>
+          <tr>
+            <td><strong>OpenAI</strong> (OpenAI, LLC)</td>
+            <td>AI generation</td>
+            <td>Story prompts, story text, character details (including any child details you chose to include), and image/narration requests are sent to OpenAI's API to generate text, images, and audio. Per OpenAI's API terms, API data is <strong>not used to train their models</strong>, and is retained by OpenAI only for limited abuse-monitoring periods.</td>
+          </tr>
+          <tr>
+            <td><strong>Google Cloud Translation</strong> (Google LLC)</td>
+            <td>Machine translation</td>
+            <td>Story text submitted for translation into your chosen language.</td>
+          </tr>
+          <tr>
+            <td><strong>RevenueCat</strong> (RevenueCat, Inc.)</td>
+            <td>Subscription management</td>
+            <td>Pseudonymous user ID, purchase/entitlement events from Apple/Google. No payment card data.</td>
+          </tr>
+          <tr>
+            <td><strong>Apple / Google</strong></td>
+            <td>App distribution and billing</td>
+            <td>Your purchase is processed by the App Store or Google Play under their own privacy policies. They tell us <em>that</em> you subscribed, not your payment details.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>We may also disclose data where required by law or to protect the rights, safety, or property of our users (especially children), the public, or StoryBoo &mdash; for example, reporting content that sexualizes minors to relevant authorities.</p>
+      <p>We do not share personal data with advertisers, data brokers, or social networks.</p>
     </section>
 
     <section>
-      <h2>6. Updates</h2>
-      <p>Policy updates are posted here with a revised date. Continued use indicates acceptance of changes.</p>
+      <h2>6. International transfers</h2>
+      <p>We are based in the EU/EEA, and our infrastructure providers store and process data primarily in the <strong>United States</strong>. Where personal data is transferred outside the EU/EEA, we rely on safeguards recognized under GDPR &mdash; primarily the <strong>EU&ndash;U.S. Data Privacy Framework</strong> (Google, OpenAI, and RevenueCat participate, where certified) and/or the European Commission's <strong>Standard Contractual Clauses</strong>, together with the providers' technical and organizational security measures. You can contact us (Section 13) for more information about transfer safeguards.</p>
     </section>
 
-    <p class="legal-updated">Last updated: October 17, 2025</p>
+    <section>
+      <h2>7. Security</h2>
+      <p>We take reasonable technical and organizational measures to protect your data, including encryption in transit (TLS), encryption at rest on our cloud infrastructure, server-side authorization checks on every request (so users can only access their own data), Firebase App Check device attestation, and access controls limiting who can administer production systems. No system is perfectly secure; if a breach affects your personal data, we will notify you and the relevant authorities as required by law.</p>
+    </section>
+
+    <section>
+      <h2>8. Retention and deletion</h2>
+      <ul>
+        <li><strong>Account data and content</strong> &mdash; kept while your account exists. When you <strong>delete your account</strong> (in the app: Profile &rarr; Account settings, or by contacting us), your account record and authentication credentials are deleted immediately, and your stories, characters, generated media, and other associated data are deleted from production systems.</li>
+        <li><strong>Individual content</strong> &mdash; you can delete individual stories and characters at any time; associated stored images/audio are removed.</li>
+        <li><strong>Backups</strong> &mdash; residual copies in backups are overwritten on our normal backup cycle.</li>
+        <li><strong>Aggregate statistics</strong> &mdash; non-identifying counters (e.g., total stories created, survey tallies) are retained indefinitely; they cannot be linked back to you after deletion.</li>
+        <li><strong>Moderation and legal records</strong> &mdash; we may retain records of serious violations, bans, appeals, and related identifiers for as long as needed to enforce our Terms, prevent banned users from returning, and comply with legal obligations, even after account deletion.</li>
+        <li><strong>Server logs</strong> &mdash; routine infrastructure logs (which can include IP addresses) are retained for short periods per our cloud provider's default cycles and then deleted.</li>
+        <li><strong>AI providers</strong> &mdash; content sent to OpenAI for generation is retained by OpenAI only for its limited abuse-monitoring window per its API data-usage policies.</li>
+      </ul>
+      <p>If you simply uninstall the app, your account and data are <strong>not</strong> deleted &mdash; sign back in and delete your account, or contact us.</p>
+    </section>
+
+    <section>
+      <h2>9. Your rights</h2>
+      <p>Depending on where you live (and in all cases under GDPR if you are in the EU/EEA), you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> your data &mdash; use the in-app <strong>data export</strong> (Profile &rarr; Account settings &rarr; Download my data) to get a copy of your account data, stories, and characters in JSON format, or contact us;</li>
+        <li><strong>Rectify</strong> inaccurate data &mdash; most data (display name, characters, stories) can be edited directly in the app;</li>
+        <li><strong>Delete</strong> your data &mdash; use in-app account deletion or contact us (see Section 8 for what is retained);</li>
+        <li><strong>Portability</strong> &mdash; receive data you provided in a structured, machine-readable format (the in-app export);</li>
+        <li><strong>Object</strong> to or <strong>restrict</strong> processing based on legitimate interests;</li>
+        <li><strong>Withdraw consent</strong> where processing is based on consent, without affecting prior processing;</li>
+        <li><strong>Complain</strong> to a supervisory authority &mdash; in Sweden, the Swedish Authority for Privacy Protection (IMY, <a href="https://www.imy.se">www.imy.se</a>); you may also complain to the authority in your country of residence.</li>
+      </ul>
+      <p>To exercise any right that isn't available in-app, contact us (Section 13). We will respond within the timeframes required by law (under GDPR, normally one month) and may need to verify your identity first. We do not discriminate against you for exercising your rights.</p>
+      <p><strong>California residents:</strong> we do not &ldquo;sell&rdquo; or &ldquo;share&rdquo; personal information as defined by the CCPA/CPRA, and we do not use or disclose sensitive personal information for purposes requiring a right to limit. You may exercise access, deletion, and correction rights as described above.</p>
+    </section>
+
+    <section>
+      <h2>10. Notifications</h2>
+      <p>The app uses <strong>local notifications</strong> scheduled on your device (for example, an optional reminder before a free trial ends). These are controlled by your device's notification permission, which you can change anytime in system settings. In-app inbox messages (such as moderation notices) are delivered through your account, not through push tracking. We do not send marketing push notifications.</p>
+    </section>
+
+    <section>
+      <h2>11. Cookies and website</h2>
+      <p>Our website at www.storybooapp.com is an informational site. It does not set advertising or analytics cookies. Embedded resources (such as web fonts) may be loaded from third-party servers, which receive your IP address as a technical necessity when delivering the resource.</p>
+    </section>
+
+    <section>
+      <h2>12. Changes to this policy</h2>
+      <p>We may update this policy from time to time. The &ldquo;Last updated&rdquo; date below shows the current version. For material changes &mdash; especially any that would expand how we use children's data, which we do not anticipate &mdash; we will give you reasonable advance notice in the app or by email before the change takes effect.</p>
+    </section>
+
+    <section>
+      <h2>13. Contact us</h2>
+      <p><strong>StoryBoo</strong> &mdash; data controller<br />
+      Email: <a href="mailto:support@storybooapp.com">support@storybooapp.com</a><br />
+      Website: <a href="https://www.storybooapp.com">www.storybooapp.com</a></p>
+      <p>If you are in the EU/EEA and prefer, you may contact your local supervisory authority; in Sweden this is IMY (<a href="https://www.imy.se">www.imy.se</a>).</p>
+    </section>
+
+    <p class="legal-updated">Last updated: June 11, 2026</p>
   </main>
 </body>
 </html>
