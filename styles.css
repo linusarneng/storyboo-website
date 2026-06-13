@@ -232,7 +232,7 @@ h6 {
 }
 
 .store-btn img {
-    height: 80px;
+    height: 95px;
     border-radius: 8px;
 }
 
@@ -714,20 +714,24 @@ h6 {
     }
 
     .hero-description {
-        display: block !important;   /* show the description on mobile */
-        font-size: 1.02rem;
-        max-width: 100%;
-        margin: 0 auto 1.5rem;
-        padding: 0 0.5rem;
+        display: none !important;
     }
 
     .hero-buttons {
-        justify-content: center;
-        gap: 0.6rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.65rem;
+    }
+
+    .store-btn {
+        width: 100%;
+        max-width: 240px;
     }
 
     .store-btn img {
-        height: 52px;
+        width: 100%;
+        height: auto;
+        display: block;
     }
 
     /* How it Works — vertical + compact side-by-side previews */
@@ -748,22 +752,27 @@ h6 {
         text-align: left;
     }
 
+    /* Text on left, screenshot on right for mobile */
+    .step-wrapper .step-info {
+        order: 1;
+        flex: 1;
+        text-align: left;
+    }
+
+    .step-wrapper .phone-card {
+        order: 2;
+        flex-shrink: 0;
+    }
+
     .phone-card {
         width: 158px;
         height: 316px;
-        flex-shrink: 0;
         border-radius: 28px;
         border-width: 3px;
     }
 
     .phone-screen {
         border-radius: 22px;
-    }
-
-    .step-info {
-        max-width: none;
-        flex: 1;
-        text-align: left;
     }
 
     .step-number {
@@ -889,8 +898,8 @@ h6 {
         gap: 0.85rem;
     }
 
-    .store-btn img {
-        height: 46px;
+    .store-btn {
+        max-width: 210px;
     }
 }
 
@@ -901,35 +910,79 @@ h6 {
     }
 }
 
-/* Keep legal pages decent on mobile (preserved) */
+/* Legal pages – much better mobile experience (wider content) */
 @media (max-width: 768px) {
     .legal-page {
-        padding: 1rem;
+        padding: 0;
     }
 
     .legal-container {
-        margin: 2.5rem 0.75rem;
-        padding: 1.35rem;
-        border-radius: 16px;
+        margin: 0.9rem 0.35rem;
+        padding: 1rem 0.8rem 1.25rem;
+        border-radius: 14px;
     }
 
     .legal-title {
-        font-size: 1.65rem;
+        font-size: 1.55rem;
+        line-height: 1.2;
+        margin-bottom: 0.6rem;
     }
 
     .legal-intro {
-        font-size: 1rem;
+        font-size: 0.97rem;
+        line-height: 1.55;
+        margin-bottom: 1.1rem;
     }
 
     .legal-container h2 {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
+        margin-top: 1.35rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .legal-container h3 {
+        font-size: 1.02rem;
+        margin-top: 1rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .legal-container p,
+    .legal-container li {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    .legal-container ul,
+    .legal-container ol {
+        padding-left: 1.1rem;
+        margin: 0.5rem 0 0.9rem;
+    }
+
+    .legal-summary {
+        padding: 0.9rem 0.75rem;
+        margin: 0.8rem 0 1.1rem;
     }
 
     .back-link {
-        top: 0.8rem;
-        left: 0.8rem;
-        padding: 0.5rem 0.85rem;
-        font-size: 0.85rem;
+        top: 0.55rem;
+        left: 0.55rem;
+        padding: 0.4rem 0.65rem;
+        font-size: 0.8rem;
+        border-radius: 10px;
+    }
+
+    .legal-updated {
+        font-size: 0.8rem;
+        margin-top: 1.5rem;
+    }
+
+    .legal-table {
+        font-size: 0.82rem;
+    }
+
+    .legal-table th,
+    .legal-table td {
+        padding: 0.5rem 0.6rem;
     }
 }
 
@@ -1013,3 +1066,27 @@ h6 {
         overflow-x: auto;
     }
 }
+
+/* ============================================
+   Scroll-triggered reveal animations
+   Nice subtle fades as you scroll down the page
+   ============================================ */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+                transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Light stagger so they don't all pop at once */
+.reveal:nth-child(2) { transition-delay: 60ms; }
+.reveal:nth-child(3) { transition-delay: 140ms; }
+.reveal:nth-child(4) { transition-delay: 220ms; }
+.reveal:nth-child(5) { transition-delay: 300ms; }
+.reveal:nth-child(6) { transition-delay: 380ms; }

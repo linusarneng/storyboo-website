@@ -76,7 +76,7 @@
         </div>
         <div class="steps-container">
             <!-- Step 1: Character -->
-            <div class="step-wrapper">
+            <div class="step-wrapper reveal">
                 <div class="phone-card">
                     <div class="phone-screen">
                         <img src="Assets/character.png" alt="Character" class="app-screenshot">
@@ -90,7 +90,7 @@
             </div>
 
             <!-- Step 2: Describe -->
-            <div class="step-wrapper">
+            <div class="step-wrapper reveal">
                 <div class="phone-card">
                     <div class="phone-screen">
                         <img src="Assets/describe.png" alt="Describe Story" class="app-screenshot">
@@ -104,7 +104,7 @@
             </div>
 
             <!-- Step 3: Story -->
-            <div class="step-wrapper">
+            <div class="step-wrapper reveal">
                 <div class="phone-card">
                     <div class="phone-screen">
                         <img src="Assets/story_view.jpg" alt="Story View" class="app-screenshot">
@@ -126,36 +126,36 @@
             <p style="font-size: 1.1rem; opacity: 0.7;">Experience the magic of personalized storytelling</p>
         </div>
         <div class="features-grid">
-            <div class="glass-card tilt-card">
+            <div class="glass-card tilt-card reveal">
                 <span class="feature-icon">🎭</span>
                 <h3 class="feature-title">You are the Hero</h3>
                 <p class="feature-desc">Add your child's name, appearance and interests to create completely
                     personalized stories where they are the star.</p>
             </div>
-            <div class="glass-card tilt-card">
+            <div class="glass-card tilt-card reveal">
                 <span class="feature-icon">✨</span>
                 <h3 class="feature-title">AI Magic</h3>
                 <p class="feature-desc">Our advanced AI creates unique stories based on your choices. No two stories are
                     ever the same!</p>
             </div>
-            <div class="glass-card tilt-card">
+            <div class="glass-card tilt-card reveal">
                 <span class="feature-icon">🌍</span>
                 <h3 class="feature-title">Explore</h3>
                 <p class="feature-desc">Discover a world of stories across 10+ languages.</p>
             </div>
-            <div class="glass-card tilt-card">
+            <div class="glass-card tilt-card reveal">
                 <span class="feature-icon">🗂️</span>
                 <h3 class="feature-title">Save Characters</h3>
                 <p class="feature-desc">Store character profiles and bring them back in new adventures—watch them grow
                     across stories.</p>
             </div>
-            <div class="glass-card tilt-card">
+            <div class="glass-card tilt-card reveal">
                 <span class="feature-icon">🎨</span>
                 <h3 class="feature-title">Beautiful Art</h3>
                 <p class="feature-desc">Each story comes with AI-generated images that match the adventure and show your
                     child in the action.</p>
             </div>
-            <div class="glass-card tilt-card">
+            <div class="glass-card tilt-card reveal">
                 <span class="feature-icon">🎧</span>
                 <h3 class="feature-title">Audio Stories</h3>
                 <p class="feature-desc">Enjoy narrated versions with warm, engaging voices—perfect for bedtime, car
@@ -169,7 +169,7 @@
         <div class="section-header">
             <h2 class="section-title">Loved by <span class="gradient-text">Parents</span></h2>
         </div>
-        <div class="marquee-container">
+        <div class="marquee-container reveal">
             <div class="marquee-content">
                 <!-- Original Testimonials -->
                 <div class="glass-card testimonial-card">
@@ -310,6 +310,25 @@
                     navToggle.setAttribute('aria-expanded', 'false');
                 }
             });
+        }
+
+        // Scroll reveal animations
+        const reveals = document.querySelectorAll('.reveal');
+
+        if (reveals.length > 0) {
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // animate only once
+                    }
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: '0px 0px -60px 0px'
+            });
+
+            reveals.forEach(el => revealObserver.observe(el));
         }
     </script>
 </body>
