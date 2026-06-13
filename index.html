@@ -30,13 +30,17 @@
                 <span class="brand-text">StoryBoo</span>
             </a>
 
-            <span></span><span></span><span></span>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
+
             <ul class="nav-links">
                 <li><a href="#how-it-works" class="nav-link">How it Works</a></li>
                 <li><a href="#features" class="nav-link">Features</a></li>
                 <li><a href="#testimonials" class="nav-link">Reviews</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#" class="nav-link">Get the App</a></li>
             </ul>
         </div>
     </nav>
@@ -71,44 +75,44 @@
             <h2 class="section-title">Create a story in <span class="gradient-text">3 steps</span></h2>
         </div>
         <div class="steps-container">
-            <!-- Step 1 -->
+            <!-- Step 1: Character -->
             <div class="step-wrapper">
                 <div class="phone-card">
                     <div class="phone-screen">
-                        <img src="Assets/describe_screenshoot.png" alt="Describe Story" class="app-screenshot">
+                        <img src="Assets/character.png" alt="Character" class="app-screenshot">
                     </div>
                 </div>
                 <div class="step-info">
                     <div class="step-number">1</div>
+                    <h3>Character</h3>
+                    <p>Add your child as the main character.</p>
+                </div>
+            </div>
+
+            <!-- Step 2: Describe -->
+            <div class="step-wrapper">
+                <div class="phone-card">
+                    <div class="phone-screen">
+                        <img src="Assets/describe.png" alt="Describe Story" class="app-screenshot">
+                    </div>
+                </div>
+                <div class="step-info">
+                    <div class="step-number">2</div>
                     <h3>Describe</h3>
                     <p>Choose a theme or write a prompt.</p>
                 </div>
             </div>
 
-            <!-- Step 2 -->
+            <!-- Step 3: Story -->
             <div class="step-wrapper">
                 <div class="phone-card">
                     <div class="phone-screen">
-                        <img src="Assets/customize_screenshoot.png" alt="Customize" class="app-screenshot">
-                    </div>
-                </div>
-                <div class="step-info">
-                    <div class="step-number">2</div>
-                    <h3>Customize</h3>
-                    <p>Add your child as the main character.</p>
-                </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="step-wrapper">
-                <div class="phone-card">
-                    <div class="phone-screen">
-                        <img src="Assets/read_screenshoot.png" alt="Read & Play" class="app-screenshot">
+                        <img src="Assets/story_view.jpg" alt="Story View" class="app-screenshot">
                     </div>
                 </div>
                 <div class="step-info">
                     <div class="step-number">3</div>
-                    <h3>Read & Play</h3>
+                    <h3>Story</h3>
                     <p>Enjoy your unique interactive story.</p>
                 </div>
             </div>
@@ -243,42 +247,67 @@
     </footer>
 
     <script>
-        // 3D Tilt Effect for Cards
-        document.querySelectorAll('.tilt-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
+        // 3D Tilt Effect for Cards (desktop only)
+        const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        if (!isTouch) {
+            document.querySelectorAll('.tilt-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
 
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
 
-                const rotateX = ((y - centerY) / centerY) * -10;
-                const rotateY = ((x - centerX) / centerX) * 10;
+                    const rotateX = ((y - centerY) / centerY) * -10;
+                    const rotateY = ((x - centerX) / centerX) * 10;
 
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                });
             });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        } else {
+            // On touch devices, just give a subtle active scale instead of broken tilt
+            document.querySelectorAll('.tilt-card').forEach(card => {
+                card.addEventListener('touchstart', () => {
+                    card.style.transform = 'scale(0.985)';
+                }, { passive: true });
+                card.addEventListener('touchend', () => {
+                    card.style.transform = 'scale(1)';
+                });
             });
-        });
+        }
 
-        // Mobile Nav
+        // Mobile Nav (improved)
         const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
-        if (navToggle) {
+        const navContainer = document.querySelector('.nav-container');
+
+        if (navToggle && navLinks) {
             navToggle.addEventListener('click', () => {
-                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-                if (navLinks.style.display === 'flex') {
-                    navLinks.style.flexDirection = 'column';
-                    navLinks.style.position = 'absolute';
-                    navLinks.style.top = '80px';
-                    navLinks.style.left = '0';
-                    navLinks.style.width = '100%';
-                    navLinks.style.background = 'var(--bg-dark)';
-                    navLinks.style.padding = '2rem';
-                    navLinks.style.borderBottom = 'var(--glass-border)';
+                const isOpen = navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active', isOpen);
+                navToggle.setAttribute('aria-expanded', isOpen);
+            });
+
+            // Close menu when clicking a nav link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    navToggle.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!navContainer.contains(e.target) && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    navToggle.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
                 }
             });
         }

@@ -140,6 +140,44 @@ h6 {
     width: 100%;
 }
 
+/* Hamburger / Mobile Toggle */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    margin-left: auto;
+    z-index: 1100;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2.5px;
+    background: #fff;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -582,198 +620,320 @@ h6 {
     font-weight: 600;
 }
 
-/* Better mobile hero */
+/* ============================================
+   MOBILE-FIRST RESPONSIVE IMPROVEMENTS
+   Clean, consolidated rules for great mobile experience
+   ============================================ */
+
+/* --- Base improvements for smaller screens --- */
 @media (max-width: 768px) {
+    :root {
+        --header-height: 64px;
+    }
+
+    /* Navbar + Mobile Menu */
+    .nav-container {
+        padding: 0 1rem;
+        position: relative;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(15, 5, 24, 0.96);
+        backdrop-filter: blur(20px);
+        border-bottom: var(--glass-border);
+        padding: 1rem 1.25rem 1.5rem;
+        gap: 0.25rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.85rem 1rem;
+        font-size: 1.05rem;
+        border-radius: 10px;
+    }
+
+    .nav-link:hover {
+        background: rgba(255, 255, 255, 0.06);
+        color: white;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Hero — stacked + readable */
+    .hero {
+        min-height: auto;
+        padding-top: calc(var(--header-height) + 1rem);
+        padding-bottom: 2.5rem;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
     .hero-visual {
-        height: 320px;
-        margin-bottom: 1.5rem;
-        overflow: hidden;
-    }
-    
-    .hero-floating-image {
+        order: -1;
+        height: 240px;
+        margin: 0 auto;
         max-width: 240px;
-        width: 80%;
     }
-    
-    .float-1, .float-2 {
+
+    .hero-floating-image {
+        max-width: 210px !important;
+        width: 82% !important;
+    }
+
+    .float-1,
+    .float-2 {
         display: none;
     }
 
-    /* Fix horizontal overflow on mobile */
-    .nav-container,
-    .hero-container,
-    .features-grid,
-    .steps-container,
-    .footer-content {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    .testimonial-card {
-        width: 260px;
-    }
-
-    .phone-card {
-        width: 240px;
-        height: 480px;
-    }
-
-    .marquee-container {
-        overflow: hidden;
-    }
-}
-
-/* Extra small screens */
-@media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
-    }
-    
-    .hero-description {
-        font-size: 1rem;
-        max-width: 100%;
+        font-size: 2.35rem;
+        line-height: 1.15;
+        margin-bottom: 0.9rem;
     }
 
-    .testimonial-card {
-        width: 220px;
+    .hero-description {
+        display: block !important;   /* show the description on mobile */
+        font-size: 1.02rem;
+        max-width: 100%;
+        margin: 0 auto 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        gap: 0.6rem;
+    }
+
+    .store-btn img {
+        height: 52px;
+    }
+
+    /* How it Works — vertical + compact side-by-side previews */
+    .how-it-works {
+        padding: 3.5rem 0 2rem;
+    }
+
+    .steps-container {
+        flex-direction: column;
+        gap: 1.6rem;
+        padding: 0 1rem;
+    }
+
+    .step-wrapper {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.1rem;
+        text-align: left;
     }
 
     .phone-card {
-        width: 200px;
-        height: 400px;
+        width: 158px;
+        height: 316px;
+        flex-shrink: 0;
+        border-radius: 28px;
+        border-width: 3px;
+    }
+
+    .phone-screen {
+        border-radius: 22px;
+    }
+
+    .step-info {
+        max-width: none;
+        flex: 1;
+        text-align: left;
+    }
+
+    .step-number {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+        margin: 0 0 0.4rem;
+    }
+
+    .step-info h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .step-info p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    /* Features — single column, tighter */
+    .features {
+        padding: 2.5rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 1.8rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.85rem;
     }
-}
-/* Mobile Responsiveness - Consolidated */
-@media (max-width: 768px) {
-    .hero {
-        min-height: auto;
-        padding-bottom: 2rem;
-    }
-    
-    .hero-title {
-        font-size: 2.2rem;
-        line-height: 1.2;
-    }
-    
-    .hero-container {
+
+    .features-grid {
         grid-template-columns: 1fr;
-        text-align: center;
-        gap: 1.5rem;
+        gap: 1rem;
+        padding: 0 1rem;
     }
-    
-    .hero-visual {
-        order: -1;
-        height: 260px;
-        margin: 0 auto 1rem;
-        max-width: 280px;
+
+    .glass-card {
+        padding: 1.35rem 1.25rem;
+        border-radius: 18px;
     }
-    
-    .hero-floating-image {
-        max-width: 220px !important;
-        width: 80% !important;
+
+    .feature-icon {
+        font-size: 2.1rem;
+        margin-bottom: 0.6rem;
     }
-    
-    .hero-description {
-        font-size: 1rem;
-        max-width: 100%;
+
+    .feature-title {
+        font-size: 1.15rem;
     }
-    
-    .hero-buttons {
-        justify-content: center;
+
+    .feature-desc {
+        font-size: 0.95rem;
+        line-height: 1.45;
+    }
+
+    /* Testimonials — readable stacked grid instead of marquee */
+    .marquee-container {
+        padding: 0.75rem 1rem 1.25rem;
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+    .marquee-content {
+        animation: none !important;
         flex-wrap: wrap;
-        gap: 0.8rem;
+        gap: 0.9rem;
+        justify-content: center;
+        width: 100%;
     }
-    
+
+    .marquee-content .glass-card:nth-child(n+5) {
+        display: none; /* hide duplicated items */
+    }
+
+    .testimonial-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.1rem 1.1rem;
+        font-size: 0.95rem;
+    }
+
+    .testimonial-card p {
+        margin-bottom: 0.6rem !important;
+        line-height: 1.45;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 2.5rem 0 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .footer-col h3 {
+        margin-bottom: 0.7rem;
+    }
+
+    .footer-links a {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 380px) {
+    .hero-title {
+        font-size: 2.05rem;
+    }
+
+    .phone-card {
+        width: 138px;
+        height: 276px;
+    }
+
+    .step-wrapper {
+        gap: 0.85rem;
+    }
+
+    .store-btn img {
+        height: 46px;
+    }
+}
+
+/* Desktop nav always visible (override any mobile hiding) */
+@media (min-width: 769px) {
     .nav-links {
-        display: none;
+        display: flex;
     }
 }
 
-/* Additional mobile centering */
-@media (max-width: 768px) {
-    .features, .how-it-works, .footer { padding-left: 1rem; padding-right: 1rem; }
-    .features-grid, .steps-container, .footer-content { padding: 0 0.5rem; }
-    .section-header { padding: 0 1rem; }
-    .marquee-container { padding: 1rem 0; }
-}
-
-/* Larger mascot image */
-.hero-floating-image {
-    max-width: 620px;
-    width: 100
-/* Larger mascot image */
-.hero-floating-image {
-    max-width: 620px;
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .hero-floating-image {
-        max-width: 280px;
-    }
-    
-    .hero-visual {
-        height: 300px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-description {
-        display: none;
-    }
-}
-
-/* Legal pages mobile improvements */
+/* Keep legal pages decent on mobile (preserved) */
 @media (max-width: 768px) {
     .legal-page {
         padding: 1rem;
     }
-    
+
     .legal-container {
-        margin: 3rem 0.5rem;
-        padding: 1.5rem;
+        margin: 2.5rem 0.75rem;
+        padding: 1.35rem;
         border-radius: 16px;
     }
-    
+
     .legal-title {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
+        font-size: 1.65rem;
     }
-    
+
     .legal-intro {
         font-size: 1rem;
-        margin-bottom: 2rem;
     }
-    
+
     .legal-container h2 {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
     }
-    
-    .legal-container p {
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
-    
+
     .back-link {
-        top: 1rem;
-        left: 1rem;
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+        top: 0.8rem;
+        left: 0.8rem;
+        padding: 0.5rem 0.85rem;
+        font-size: 0.85rem;
     }
 }
 
-/* Force hide hero description on mobile */
-@media (max-width: 768px) {
-    .hero-description {
-        display: none !important;
-    }
-}
-
-/* Legal pages — rich content (subheadings, lists, tables, summary box) */
+/* Legal rich content styles (moved after media for cleanliness) */
 .legal-container h3 {
     color: rgba(255, 255, 255, 0.9);
     font-family: var(--font-body);
