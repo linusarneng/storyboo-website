@@ -9,8 +9,8 @@
         content="Create unique AI-powered stories where your child is the main character. Interactive tales where you decide together how the story unfolds.">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="Assets/appstore.png">
-    <link rel="apple-touch-icon" href="Assets/appstore.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Assets/appstore.png">
+    <link rel="apple-touch-icon" href="/Assets/appstore.png">
 
     <!-- Fonts -->
     <link
@@ -18,7 +18,15 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css?v=2">
+
+    <!-- Fallback sizing if stylesheet is cached or blocked -->
+    <style>
+        .brand-logo { width: 48px; height: 48px; object-fit: cover; }
+        .hero-floating-image { max-width: 100%; height: auto; }
+        .app-screenshot { width: 100%; height: 100%; object-fit: cover; }
+        .phone-card { overflow: hidden; }
+    </style>
 </head>
 
 <body>
@@ -26,7 +34,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="brand">
-                <img src="Assets/appstore.png" alt="StoryBoo Logo" class="brand-logo">
+                <img src="/Assets/appstore.png" alt="StoryBoo Logo" class="brand-logo">
                 <span class="brand-text">StoryBoo</span>
             </a>
 
@@ -43,10 +51,10 @@
                 <li class="nav-store-item">
                     <div class="nav-store-buttons">
                         <a href="#" class="store-btn nav-store-btn nav-store-app" aria-label="Download from App Store">
-                            <img src="Assets/app_store.png" alt="Download on the App Store">
+                            <img src="/Assets/app_store.png" alt="Download on the App Store">
                         </a>
                         <a href="#" class="store-btn nav-store-btn nav-store-play" aria-label="Get it on Google Play">
-                            <img src="Assets/play_store.png" alt="Get it on Google Play">
+                            <img src="/Assets/play_store.png" alt="Get it on Google Play">
                         </a>
                     </div>
                 </li>
@@ -64,17 +72,17 @@
                 <p class="hero-description-mobile">Create magical, personalized stories where your child is the star.</p>
                 <div class="hero-buttons">
                     <a href="#" class="store-btn" aria-label="Download from App Store">
-                        <img src="Assets/app_store.png" alt="Download on the App Store">
+                        <img src="/Assets/app_store.png" alt="Download on the App Store">
                     </a>
                     <a href="#" class="store-btn" aria-label="Get it on Google Play">
-                        <img src="Assets/play_store.png" alt="Get it on Google Play">
+                        <img src="/Assets/play_store.png" alt="Get it on Google Play">
                     </a>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="floating-element float-1"></div>
                 <div class="floating-element float-2"></div>
-                <img src="Assets/wave_boo.png" alt="StoryBoo Character" class="hero-floating-image">
+                <img src="/Assets/wave_boo.png" alt="StoryBoo Character" class="hero-floating-image">
             </div>
         </div>
     </section>
@@ -89,7 +97,7 @@
             <div class="step-wrapper reveal">
                 <div class="phone-card">
                     <div class="phone-screen">
-                        <img src="Assets/character.png" alt="Character" class="app-screenshot">
+                        <img src="/Assets/character.png" alt="Character" class="app-screenshot">
                     </div>
                 </div>
                 <div class="step-info">
@@ -103,7 +111,7 @@
             <div class="step-wrapper reveal">
                 <div class="phone-card">
                     <div class="phone-screen">
-                        <img src="Assets/describe.png" alt="Describe Story" class="app-screenshot">
+                        <img src="/Assets/describe.png" alt="Describe Story" class="app-screenshot">
                     </div>
                 </div>
                 <div class="step-info">
@@ -117,7 +125,7 @@
             <div class="step-wrapper reveal">
                 <div class="phone-card">
                     <div class="phone-screen">
-                        <img src="Assets/story_view.jpg" alt="Story View" class="app-screenshot">
+                        <img src="/Assets/story_view.jpg" alt="Story View" class="app-screenshot">
                     </div>
                 </div>
                 <div class="step-info">
@@ -236,10 +244,10 @@
                 <p style="opacity: 0.6;">Magical stories for all children.</p>
                 <div class="footer-buttons">
                     <a href="#" class="store-btn" aria-label="Download from App Store">
-                        <img src="Assets/app_store.png" alt="Download on the App Store">
+                        <img src="/Assets/app_store.png" alt="Download on the App Store">
                     </a>
                     <a href="#" class="store-btn" aria-label="Get it on Google Play">
-                        <img src="Assets/play_store.png" alt="Get it on Google Play">
+                        <img src="/Assets/play_store.png" alt="Get it on Google Play">
                     </a>
                 </div>
             </div>

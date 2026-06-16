@@ -98,6 +98,7 @@ h6 {
     width: 48px;
     height: 48px;
     border-radius: 12px;
+    object-fit: cover;
 }
 
 .brand-text {
@@ -846,17 +847,6 @@ h6 {
         align-items: center;
         gap: 0.4rem;
         width: 100%;
-    }
-
-    .store-btn {
-        width: 100%;
-        max-width: 240px;
-    }
-
-    .store-btn img {
-        width: 100%;
-        height: auto;
-        display: block;
     }
 
     .hero-buttons .store-btn {
